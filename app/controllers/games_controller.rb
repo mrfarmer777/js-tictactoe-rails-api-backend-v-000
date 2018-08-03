@@ -1,7 +1,8 @@
+require 'pry'
 class GamesController < ApplicationController
   # Add your GamesController code here
   def create
-    actualState=params[:state].split(",")
+    binding.pry
     @game=Game.create(state: actualState)
     render json: @game
   end
