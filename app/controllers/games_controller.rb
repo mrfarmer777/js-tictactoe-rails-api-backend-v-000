@@ -10,6 +10,12 @@ class GamesController < ApplicationController
     render json: @game
   end
 
-  private
+  def update
+    @game=Game.find(params[:id])
+    @game.update(params)
 
+  private
+    def game_params
+      params.require(:game).permit(:state)
+    end
 end
