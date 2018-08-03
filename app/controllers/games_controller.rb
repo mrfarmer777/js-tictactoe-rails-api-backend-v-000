@@ -13,6 +13,7 @@ class GamesController < ApplicationController
   def update
     @game=Game.find(params[:id])
     @game.update(params)
+    render json: @game
   end
 
   private
