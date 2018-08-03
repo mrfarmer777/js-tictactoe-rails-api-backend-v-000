@@ -3,7 +3,7 @@ class GamesController < ApplicationController
   # Add your GamesController code here
   def create
     stateStr=params[:state].to_s
-    @game=Game.create(state: actualState)
+    @game=Game.create(state: stateStr)
     render json: @game
   end
 
